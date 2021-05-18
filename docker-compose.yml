@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+
+  myheavyfilesapi:
+    build: .
+    image: noxucloud/myheavyfilesapi:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: ./myheavyfiles-api/uploadedFiles
+        target: /usr/src/uploadedFiles
